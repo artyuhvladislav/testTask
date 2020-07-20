@@ -1,0 +1,28 @@
+const data = {
+    title: '',
+    arrImg: [],
+    mainIMg: '',
+    cost: ''
+}
+    const CONTAINER_ID = '#core-product';
+    const body = document.querySelector(CONTAINER_ID);
+    function recursion (element) {
+        element.childNodes.forEach( node => {
+            if( node.nodeName.match(/^H1/) ) {
+                data.title = node.textContent
+            }
+            else if(node.className === 'img') {
+                data.arrImg.push(node.getAttribute('src'))
+                data.mainIMg = data.arrImg[0]
+            }
+            else if(node.className === 'current-price') {
+                
+                data.cost = parseInt(node.textContent.replace(/[^,\d]/g, ''))
+               
+            }
+            else {
+                recursion(node)
+            }
+        });
+    }
+    recursion(body);
