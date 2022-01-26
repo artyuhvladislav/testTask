@@ -31,6 +31,15 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: `./css/${filename("css")}`,
     }),
+    // new CopyPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.resolve(__dirname, "src/assets"),
+    //       to: path.resolve(__dirname, "dist/assets"),
+    //       noErrorOnMissing: true,
+    //     },
+    //   ],
+    // }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
