@@ -1,3 +1,40 @@
+@import './bonusTop';
+@import './benefits';
+@import './controls';
+@import './hiddenInfo';
+@import './product';
+@import './payment';
+@import './bonusInfo';
+
+
 .bonus {
-   
+   .bonus-grid {
+        display: grid;
+        grid-template-areas: "product benefits payment controls"
+                             "product benefits hidden-info controls";
+        padding: 15px 0;
+    }    
+
+    @media only screen and (min-device-width : 761px) and (max-device-width : 1025px){
+        .bonus-grid {
+            justify-content: center;
+            grid-template-areas: "product benefits"
+                             "payment controls"
+                             "hidden-info controls";  
+            grid-template-columns: 1fr 1fr;
+        }  
+    }
+    @media only screen and (min-device-width : 408px) and (max-device-width : 760px) {
+        .bonus-grid {
+            grid-template-areas: "product"
+                                "benefits"
+                                "controls"
+                                "hidden-info"
+                                "payment";  
+            grid-template-columns: 1fr;
+        } 
+    }
 }
+
+
+

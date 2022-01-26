@@ -1,0 +1,45 @@
+@import '../../variables';
+
+.hidden-info {
+    grid-area: hidden-info;
+    max-width: 260px;
+    height: 15px;
+    margin-top: 22px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__button {
+        width: 100px;
+        height: 15px;
+        position: relative;
+        font-size: 13px;
+        line-height: 15px;
+        background: $bodyBg;
+        color: #A6AAC3;   
+
+        span {
+            display: inline-block;
+            margin-left: 10px;
+            transform: rotate(270deg);
+            font-weight: 700;
+        }
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        height: 2px;
+        background: #A6AAC3;
+        z-index: -1;
+    }
+
+
+    @media only screen and (min-device-width : 408px) and (max-device-width : 760px) {
+        max-width: 100%;
+    }
+}
