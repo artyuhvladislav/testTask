@@ -1,8 +1,18 @@
 @import './components/all';
 @import './utils/settings';
+@import './variables';
 
-  
-  
+body {
+    background: $bodyBg;
+    font-family: $fontFamily, sans-serif;
+    color: $fontColor;
+}
+
+.container {
+    padding: 20px 15px;
+}
+
+
   
   
   
